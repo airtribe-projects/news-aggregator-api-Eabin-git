@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+﻿const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const { getUser, addUser, updateUser } = require('../models/userModel');
@@ -32,6 +32,8 @@ const signup = async (req, res) => {
     email,
     passwordHash,
     preferences,
+    readArticles: [],
+    favoriteArticles: [],
   });
 
   return res.status(200).json({ message: 'Signup successful' });
